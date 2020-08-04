@@ -17,23 +17,26 @@ const students = [
     },
 ];
 
-averageStudentMark(students[0]); 
+averageStudentMark(students[0]); // 0 1 2 3
 averageGroupMark(students);
 
 function averageStudentMark(student) {
-    let averageMark;
-    averageMark = avgMarks(student.marks);
+    let averageMark = avgMarks(student.marks);
     console.log(`${student.name} has an average mark of ${averageMark}.`);
     return averageMark;
 }
 
 
 function averageGroupMark(students) {
-    let allMarks;
-    allMarks = students.flatMap(function(student) {
+    let allMarks = students.flatMap(function(student) {
         return student.marks
     });
-
+    console.log(`All average marks of students:`)
+    for (let i = 0; i < students.length; i++) 
+    {
+        let averageMark = avgMarks(students[i].marks);
+        console.log(`${students[i].name} has an average mark of ${averageMark}.`);
+    }
     const averageMark = avgMarks(allMarks);
     console.log(`Average mark of group is ${averageMark}.`);
 }
