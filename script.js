@@ -28,16 +28,17 @@ function averageStudentMark(student) {
 
 
 function averageGroupMark(students) {
+    let averageMark;
     let allMarks = students.flatMap(function(student) {
         return student.marks
     });
     console.log(`All average marks of students:`)
     for (let i = 0; i < students.length; i++) 
     {
-        let averageMark = avgMarks(students[i].marks);
+        averageMark = avgMarks(students[i].marks);
         console.log(`${students[i].name} has an average mark of ${averageMark}.`);
     }
-    const averageMark = avgMarks(allMarks);
+    averageMark = avgMarks(allMarks);
     console.log(`Average mark of group is ${averageMark}.`);
 }
 
